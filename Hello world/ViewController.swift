@@ -10,9 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var textField: UITextField!
+    @IBOutlet var label: UILabel!
+    
+    @IBAction func submit(sender: AnyObject) {
+        var age = Int(textField.text!)!
+        
+        age = age - 1
+        
+        label.text = "Your age is actually \(age) in DBC"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
