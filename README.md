@@ -1,5 +1,5 @@
 # DBC-Time-Machine
-##My First app program in Swift
+My First app program in Swift
 
 ##What is this app doing? 
 This app can convert user's actual age to DBC calculate base
