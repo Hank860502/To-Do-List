@@ -19,6 +19,8 @@ class SecondViewController: UIViewController {
     @IBAction func submit(sender: AnyObject) {
         toDoList.append(newItem.text!)
         newItem.text = ""
+        
+        NSUserDefaults.standardUserDefaults().setObject("toDoList", forKey: "toDoList")
     }
 
 

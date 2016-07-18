@@ -16,6 +16,10 @@ class FirstViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if NSUserDefaults.standardUserDefaults().objectForKey("toDoList") != nil {
+            toDoList = NSUserDefaults.standardUserDefaults().objectForKey("toDoList") as! [String]
+        }
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
