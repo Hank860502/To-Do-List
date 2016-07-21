@@ -17,9 +17,8 @@ class FirstViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if NSUserDefaults.standardUserDefaults().objectForKey("toDoList") != nil {
-            toDoList = NSUserDefaults.standardUserDefaults().objectForKey("toDoList") as! [String]
-        }
+        //if NSUserDefaults.standardUserDefaults().objectForKey("toDoList") != nil {
+            //toDoList = NSUserDefaults.standardUserDefaults().objectForKey("toDoList") as! [String]}
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,6 +39,14 @@ class FirstViewController: UIViewController, UITableViewDelegate {
         tableView.reloadData()
     }
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+        
+        if editingStyle == UITableViewCellEditingStyle.Delete{
+            toDoList.removeAtIndex(indexPath.row)
+            
+            tableView.reloadData()
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {
